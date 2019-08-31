@@ -1,0 +1,74 @@
+
+public class BitLogicImpl {
+
+	public static void main(String[] args) {
+		int setPos = SetBitAtSpecifiedPosition(10,3);
+		int clearPos = ClearBitAtSpecifiedPosition(10,4);
+		int toggleOutput = ClearBitAtSpecifiedPosition(10,4);
+		boolean isSet = ChecjBitAtSpecifiedPositionIsSet(10,3);
+		boolean isPowerOfTwo = checkWhetherNumberIsPowerOftwo(16);
+		int data = countSetBitsInANumber(16);
+		
+		int result = getOddOccurences(new int[] {10,2,2,2,2});
+		System.out.println(result);
+	}
+	
+	public static int SetBitAtSpecifiedPosition(int number, int index){
+	       int leftShift = 1 << (index-1);
+	       //	System.out.println(leftShift);
+	       	int position = leftShift ^ number;
+	    
+	       	return position;
+	}
+
+	public static int ClearBitAtSpecifiedPosition(int number, int index){
+	       int leftShift = 1 << (index-1);
+	       	//System.out.println(leftShift);
+	       	int position = leftShift ^ number;
+	    
+	       	return position;
+	}
+	
+	public static int ToogleBitAtSpecifiedPosition(int number, int index){
+	       int leftShift = 1 << (index-1);
+	       //	System.out.println(leftShift);
+	       	int position = leftShift ^ number;
+	    
+	       	return position;
+	}
+	
+	public static boolean ChecjBitAtSpecifiedPositionIsSet(int number, int index){
+	       int leftShift = 1 << (index-1);
+	       //	System.out.println(leftShift);
+	       	int position = leftShift & number;
+	    
+	       	return position>0 ;
+	}
+	
+	public static boolean checkWhetherNumberIsPowerOftwo(int number) {
+		int output = number & (number-1);
+		
+		return output == 0;
+	}
+	
+	public static int countSetBitsInANumber(int number) {
+		int index = 0;
+		while(number>0) {
+			index++;
+			number = number & (number-1);
+		}
+		return index;
+	}
+	
+	public static int getOddOccurences(int[] arrayData) {
+		int result = 0;
+		
+		for(int i=0;i<arrayData.length;i++) {
+		result = result ^ arrayData[i];
+		}
+		
+		
+		return result;
+		
+	}
+}

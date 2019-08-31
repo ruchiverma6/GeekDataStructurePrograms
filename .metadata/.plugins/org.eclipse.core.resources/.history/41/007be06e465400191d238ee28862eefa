@@ -1,0 +1,34 @@
+
+public class BitLogicImpl {
+
+	public static void main(String[] args) {
+		int setPos = SetBitAtSpecifiedPosition(10,3);
+		int clearPos = ClearBitAtSpecifiedPosition(10,4);
+		int toggleOutput = ClearBitAtSpecifiedPosition(10,2);
+		System.out.println(toggleOutput);
+	}
+	
+	public static int SetBitAtSpecifiedPosition(int number, int index){
+	       int leftShift = 1 << (index-1);
+	       //	System.out.println(leftShift);
+	       	int position = leftShift ^ number;
+	    
+	       	return position;
+	}
+
+	public static int ClearBitAtSpecifiedPosition(int number, int index){
+	       int leftShift = 1 << (index-1);
+	       	//System.out.println(leftShift);
+	       	int position = leftShift ^ number;
+	    
+	       	return position;
+	}
+	
+	public static int ToogleBitAtSpecifiedPosition(int number, int index){
+	       int leftShift = 1 << (index-1);
+	       //	System.out.println(leftShift);
+	       	int position = leftShift ^ number;
+	    
+	       	return position;
+	}
+}

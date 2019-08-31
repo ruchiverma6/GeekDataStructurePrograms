@@ -1,0 +1,41 @@
+
+public class StringImpl {
+
+	public static void main(String[] args) {
+		
+
+	}
+	
+	private boolean checkIfSecondStringIsPermutationOfFirst(String str1, String str2) {
+		int[] count1 = new int[256];
+		int[] count2 = new int[256];
+	
+		for(int i=0;i<str2.length();i++) {
+			count2[str2.charAt(i)]++;
+		}
+		
+		for(int i =0; i<str1.length(); i++) {
+			for(int j=i; j<(i+str2.length()); j++) {
+				count1[str1.charAt(j)]++;
+			}
+			if(matchTwoString(count1, count2, str2)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+
+	private boolean matchTwoString(int[] count1, int[] count2, String str2) {
+		boolean isMatch = false;
+		for(int i = 0; i <str2.length(); i++) {
+			if(count1[str2.charAt(i)] == count2[str2.charAt(i)]) {
+				isMatch = true;
+			}
+		}
+		return isMatch;
+	}
+
+	
+
+}

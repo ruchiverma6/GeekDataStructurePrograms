@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;right&apos; in &apos;BinaryTree.printLeftViewOfBinaryTreeAtEachLevel(...)&apos; to &apos;root2&apos;&#x0A;- Original project: &apos;BinaryTreePrograms&apos;&#x0A;- Original element: &apos;BinaryTree.printLeftViewOfBinaryTreeAtEachLevel(Node, Node, int).right&apos;&#x0A;- Renamed element: &apos;right&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;right&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{BinaryTree.java[BinaryTree~printLeftViewOfBinaryTreeAtEachLevel~QNode;~QNode;~I@right!6224!6233!6229!6233!QNode;!0!true" name="root2" references="true" stamp="1566024539332" version="1.0"/>
+</session>

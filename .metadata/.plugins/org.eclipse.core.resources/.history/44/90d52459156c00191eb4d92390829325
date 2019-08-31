@@ -1,0 +1,108 @@
+
+public class StringImpl {
+
+	public static void main(String[] args) {
+		
+		//boolean isPermutation = checkIfSecondStringIsPermutationOfFirst("geekforgeeks", "l");
+		
+		//System.out.print(isPermutation);
+		
+		//boolean isAnagram = checkIfTwoStringsAreAnagrams("gfgdeA", "ggfdeA");
+		//System.out.println(isAnagram);
+		
+		int repeatingData = firstRepeatingCharacter("abbc");
+		System.out.print(repeatingData);
+	}
+	
+	private static boolean checkIfSecondStringIsPermutationOfFirst(String str1, String str2) {
+		int[] count1 = new int[256];
+		int[] count2 = new int[256];
+	
+		for(int i=0;i<str2.length();i++) {
+			count2[str2.charAt(i)]++;
+		}
+		
+		for(int i =0; i<str1.length(); i++) {
+			for(int j=i; j<(i+str2.length()); j++) {
+				if(j== str2.length()) {
+					break;
+				}
+				count1[str1.charAt(j)]++;
+			}
+			if(matchTwoString(count1, count2, str2)) {
+				return true;
+			}
+			count1[str1.charAt(i)]--;
+		}
+		
+		return false;
+	}
+
+	private static boolean matchTwoString(int[] count1, int[] count2, String str2) {
+		boolean isMatch = false;
+		for(int i = 0; i <str2.length(); i++) {
+			if(count1[str2.charAt(i)] == count2[str2.charAt(i)]) {
+				isMatch = true;
+			}else {
+				isMatch = false;
+				break;
+			}
+		}
+		return isMatch;
+	}
+	
+	public static boolean checkIfTwoStringsAreAnagrams(String str1, String str2) {
+		int[] count1 = new int[256];
+		int[] count2 = new int[256];
+		////gfg //ggf
+		
+		if(str1.length()!=str2.length()) {
+			return false;
+		}
+		for(int i=0; i<str1.length(); i++) {
+			count1[str1.charAt(i)]++;
+			
+		}
+		
+		for(int i=0; i<str2.length(); i++) {
+			count1[str2.charAt(i)]--;		
+		}
+		boolean isAnagram = false;
+		for(int i=0; i<str1.length();i++) {
+			if(count1[str1.charAt(i)]==0) {
+				isAnagram = true;
+			}else {
+				isAnagram = false;
+				return isAnagram;
+			}
+		}
+			
+		return isAnagram;
+	}
+	
+	public static int firstRepeatingCharacter(String str1){
+		//abbcc//
+		
+		int[] count1 = new int[256];
+		int result = Integer.MAX_VALUE;
+		
+		for(int i=0; i<str1.length(); i++)
+		{
+			count1[str1.charAt(i)]++;
+			
+			if(count1[str1.charAt(i)]> 1) {
+				result = Math.min(result,i);
+			}
+			
+		}
+		
+		return result;
+		
+	
+		
+	}
+	
+
+	
+
+}

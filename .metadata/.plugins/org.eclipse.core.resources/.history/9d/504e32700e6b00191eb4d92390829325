@@ -1,0 +1,18 @@
+
+public class StringImpl {
+
+	public static void main(String[] args) {
+		
+
+	}
+	
+	private boolean checkIfSecondStringIsPermutationOfFirst(String str1, String str2) {
+		int[] count1 = new int[256];
+		int[] count2 = new int[256];
+		
+		
+		
+		return false;
+	}
+
+}

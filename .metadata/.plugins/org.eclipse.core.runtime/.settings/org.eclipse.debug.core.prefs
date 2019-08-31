@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+org.eclipse.debug.core.USE_STEP_FILTERS=true
+prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<watchExpressions>\n    <expression enabled\="true" text\="(1&lt;&lt;n)"/>\n    <expression enabled\="true" text\="str.length()"/>\n    <expression enabled\="true" text\="rrayData[partitionKey]"/>\n    <expression enabled\="true" text\="right.length"/>\n</watchExpressions>\n

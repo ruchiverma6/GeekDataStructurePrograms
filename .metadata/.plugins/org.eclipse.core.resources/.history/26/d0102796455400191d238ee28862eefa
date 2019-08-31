@@ -1,0 +1,17 @@
+
+public class BitLogicImpl {
+
+	public static void main(String[] args) {
+		int pos = FindSetBitAtSpecifiedPosition(10,3);
+		System.out.println(pos);
+	}
+	
+	public static int FindSetBitAtSpecifiedPosition(int number, int index){
+	       int leftShift = 1 << (index-1);
+	       	System.out.println(leftShift);
+	       	int position = leftShift ^ number;
+	    
+	       	return position;
+	}
+
+}
